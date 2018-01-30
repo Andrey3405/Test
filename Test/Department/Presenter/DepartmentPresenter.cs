@@ -14,6 +14,7 @@ namespace Test.Department.Presenter
         private View.IDepartmentView view;
         private Model.DepartmentModel model;
         private Class.Connection connection;
+        private DataTable dtEmployees;
 
         public DepartmentPresenter()
         {
@@ -39,6 +40,9 @@ namespace Test.Department.Presenter
 
             //Привязка событий
             view.LoadForm += OnLoadForm;
+            view.ChangingNode += OnChangingNode;
+
+            view.DGVEmployees.DataSourceChanging += OnDataSourceChangeing;
         }
 
         public Form ShowForm()
@@ -48,20 +52,25 @@ namespace Test.Department.Presenter
 
         public void OnLoadForm(object sender, EventArgs e)
         {
-            DataTable table = connection.GetDepartments();
-            TreeNode tree = model.CreateTree(table);
+            dtEmployees = connection.GetDepartments();
+            TreeNode tree = model.CreateTree(dtEmployees);
             view.AddNode(tree);
+        }
 
-            //for(int i=0;i<table.Rows.Count;i++)
-            //{
-            //    TreeNode node = null;
-            //    if(String.IsNullOrEmpty(table.Rows[i][3]?.ToString()))
-            //    {
-            //        node = new TreeNode(table.Rows[i][1].ToString());
-            //        node.Tag = table.Rows[i][0];
-            //        view.AddNode(node);
-            //    }
-            //}
+        public void OnChangingNode(object sender, TreeViewEventArgs e)
+        {
+            view.DGVEmployees.DataSource =
+                connection.GetEmployeeByDepartmentID(view.SelectedNodeID);            
+        }
+
+        public void OnDataSourceChangeing(object sender, EventArgs e)
+        {
+            view.DGVEmployees.SetColumnVisible("ID", false);
+            view.DGVEmployees.SetColumnHeaderText("Employee", "Сотрудник");
+            view.DGVEmployees.SetColumnHeaderText("DateOfBirth", "Дата рождения");
+            view.DGVEmployees.SetColumnHeaderText("Age", "Возраст");
+            view.DGVEmployees.SetColumnHeaderText("Document", "Документ");
+            view.DGVEmployees.SetColumnHeaderText("Position", "Должность");
         }
     }
 }

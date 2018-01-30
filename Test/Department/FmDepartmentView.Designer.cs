@@ -31,24 +31,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmDepartmentView));
             this.tscMain = new System.Windows.Forms.ToolStripContainer();
             this.pnlEmployee = new System.Windows.Forms.Panel();
-            this.splitter1 = new System.Windows.Forms.Splitter();
-            this.pnlDepartment = new System.Windows.Forms.Panel();
-            this.tsrDepartment = new System.Windows.Forms.ToolStrip();
-            this.tvDepartment = new System.Windows.Forms.TreeView();
+            this.dgvEmployee = new System.Windows.Forms.DataGridView();
             this.tsrEmployee = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.dgvEmployee = new System.Windows.Forms.DataGridView();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.pnlDepartment = new System.Windows.Forms.Panel();
+            this.tvDepartment = new System.Windows.Forms.TreeView();
+            this.tsrDepartment = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.tscMain.ContentPanel.SuspendLayout();
             this.tscMain.SuspendLayout();
             this.pnlEmployee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
+            this.tsrEmployee.SuspendLayout();
             this.pnlDepartment.SuspendLayout();
             this.tsrDepartment.SuspendLayout();
-            this.tsrEmployee.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // tscMain
@@ -59,7 +59,7 @@
             this.tscMain.ContentPanel.Controls.Add(this.pnlEmployee);
             this.tscMain.ContentPanel.Controls.Add(this.splitter1);
             this.tscMain.ContentPanel.Controls.Add(this.pnlDepartment);
-            this.tscMain.ContentPanel.Size = new System.Drawing.Size(735, 440);
+            this.tscMain.ContentPanel.Size = new System.Drawing.Size(735, 415);
             this.tscMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscMain.Location = new System.Drawing.Point(0, 0);
             this.tscMain.Name = "tscMain";
@@ -74,46 +74,23 @@
             this.pnlEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEmployee.Location = new System.Drawing.Point(228, 0);
             this.pnlEmployee.Name = "pnlEmployee";
-            this.pnlEmployee.Size = new System.Drawing.Size(507, 440);
+            this.pnlEmployee.Size = new System.Drawing.Size(507, 415);
             this.pnlEmployee.TabIndex = 2;
             // 
-            // splitter1
+            // dgvEmployee
             // 
-            this.splitter1.Location = new System.Drawing.Point(223, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(5, 440);
-            this.splitter1.TabIndex = 1;
-            this.splitter1.TabStop = false;
-            // 
-            // pnlDepartment
-            // 
-            this.pnlDepartment.Controls.Add(this.tvDepartment);
-            this.pnlDepartment.Controls.Add(this.tsrDepartment);
-            this.pnlDepartment.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlDepartment.Location = new System.Drawing.Point(0, 0);
-            this.pnlDepartment.Name = "pnlDepartment";
-            this.pnlDepartment.Size = new System.Drawing.Size(223, 440);
-            this.pnlDepartment.TabIndex = 0;
-            // 
-            // tsrDepartment
-            // 
-            this.tsrDepartment.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.tsrDepartment.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton5});
-            this.tsrDepartment.Location = new System.Drawing.Point(0, 0);
-            this.tsrDepartment.Name = "tsrDepartment";
-            this.tsrDepartment.Size = new System.Drawing.Size(223, 25);
-            this.tsrDepartment.TabIndex = 0;
-            // 
-            // tvDepartment
-            // 
-            this.tvDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvDepartment.Location = new System.Drawing.Point(0, 25);
-            this.tvDepartment.Name = "tvDepartment";
-            this.tvDepartment.Size = new System.Drawing.Size(223, 415);
-            this.tvDepartment.TabIndex = 1;
+            this.dgvEmployee.AllowUserToAddRows = false;
+            this.dgvEmployee.AllowUserToDeleteRows = false;
+            this.dgvEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvEmployee.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvEmployee.Location = new System.Drawing.Point(0, 25);
+            this.dgvEmployee.Name = "dgvEmployee";
+            this.dgvEmployee.ReadOnly = true;
+            this.dgvEmployee.RowHeadersVisible = false;
+            this.dgvEmployee.Size = new System.Drawing.Size(507, 390);
+            this.dgvEmployee.TabIndex = 1;
             // 
             // tsrEmployee
             // 
@@ -126,24 +103,6 @@
             this.tsrEmployee.Size = new System.Drawing.Size(507, 25);
             this.tsrEmployee.TabIndex = 0;
             this.tsrEmployee.Text = "toolStrip2";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
             // 
             // toolStripButton3
             // 
@@ -163,16 +122,62 @@
             this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton4.Text = "toolStripButton4";
             // 
-            // dgvEmployee
+            // splitter1
             // 
-            this.dgvEmployee.AllowUserToAddRows = false;
-            this.dgvEmployee.AllowUserToDeleteRows = false;
-            this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEmployee.Location = new System.Drawing.Point(0, 25);
-            this.dgvEmployee.Name = "dgvEmployee";
-            this.dgvEmployee.Size = new System.Drawing.Size(507, 415);
-            this.dgvEmployee.TabIndex = 1;
+            this.splitter1.Location = new System.Drawing.Point(223, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(5, 415);
+            this.splitter1.TabIndex = 1;
+            this.splitter1.TabStop = false;
+            // 
+            // pnlDepartment
+            // 
+            this.pnlDepartment.Controls.Add(this.tvDepartment);
+            this.pnlDepartment.Controls.Add(this.tsrDepartment);
+            this.pnlDepartment.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlDepartment.Location = new System.Drawing.Point(0, 0);
+            this.pnlDepartment.Name = "pnlDepartment";
+            this.pnlDepartment.Size = new System.Drawing.Size(223, 415);
+            this.pnlDepartment.TabIndex = 0;
+            // 
+            // tvDepartment
+            // 
+            this.tvDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvDepartment.Location = new System.Drawing.Point(0, 25);
+            this.tvDepartment.Name = "tvDepartment";
+            this.tvDepartment.Size = new System.Drawing.Size(223, 390);
+            this.tvDepartment.TabIndex = 1;
+            this.tvDepartment.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TVDepartment_AfterSelect);
+            // 
+            // tsrDepartment
+            // 
+            this.tsrDepartment.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tsrDepartment.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton5});
+            this.tsrDepartment.Location = new System.Drawing.Point(0, 0);
+            this.tsrDepartment.Name = "tsrDepartment";
+            this.tsrDepartment.Size = new System.Drawing.Size(223, 25);
+            this.tsrDepartment.TabIndex = 0;
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "toolStripButton2";
             // 
             // toolStripButton5
             // 
@@ -198,13 +203,13 @@
             this.tscMain.PerformLayout();
             this.pnlEmployee.ResumeLayout(false);
             this.pnlEmployee.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
+            this.tsrEmployee.ResumeLayout(false);
+            this.tsrEmployee.PerformLayout();
             this.pnlDepartment.ResumeLayout(false);
             this.pnlDepartment.PerformLayout();
             this.tsrDepartment.ResumeLayout(false);
             this.tsrDepartment.PerformLayout();
-            this.tsrEmployee.ResumeLayout(false);
-            this.tsrEmployee.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
             this.ResumeLayout(false);
 
         }

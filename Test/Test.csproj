@@ -46,7 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\Connection.cs" />
+    <Compile Include="Class\Date.cs" />
     <Compile Include="Class\Messages.cs" />
+    <Compile Include="Class\MyDataGridView.cs" />
     <Compile Include="Class\MyTextBox.cs" />
     <Compile Include="ConnectionDB\FmConnectionDBView.cs">
       <SubType>Form</SubType>
@@ -66,6 +68,7 @@
     <Compile Include="Department\Model\DepartmentModel.cs" />
     <Compile Include="Department\Presenter\DepartmentPresenter.cs" />
     <Compile Include="Department\View\IDepartmentView.cs" />
+    <Compile Include="Interface\IDataGridView.cs" />
     <Compile Include="Interface\ITextBox.cs" />
     <Compile Include="Interface\ITreeView.cs" />
     <Compile Include="Program.cs" />

@@ -33,17 +33,17 @@ namespace Test.ConnectionDB
         #endregion
 
         #region Методы
-        private void btnTestConnection_Click(object sender, EventArgs e)
+        private void BtnTestConnection_Click(object sender, EventArgs e)
         {
             TestConnectionClick?.Invoke(sender, e);
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
             CancelClick?.Invoke(sender, e);
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
+        private void BtnOK_Click(object sender, EventArgs e)
         {
             OKClick?.Invoke(sender, e);
         }

@@ -94,7 +94,7 @@
             this.btnOK.TabIndex = 2;
             this.btnOK.Text = "ОК";
             this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            this.btnOK.Click += new System.EventHandler(this.BtnOK_Click);
             // 
             // btnTestConnection
             // 
@@ -104,7 +104,7 @@
             this.btnTestConnection.TabIndex = 1;
             this.btnTestConnection.Text = "Проверка";
             this.btnTestConnection.UseVisualStyleBackColor = true;
-            this.btnTestConnection.Click += new System.EventHandler(this.btnTestConnection_Click);
+            this.btnTestConnection.Click += new System.EventHandler(this.BtnTestConnection_Click);
             // 
             // btnCancel
             // 
@@ -115,7 +115,7 @@
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // FmConnectionDBView
             // 
