@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Test.Interface
 {
-    public interface ITextBox
+    public interface ILabel
     {
         string Text { get; set; }
-        bool Compulsory { get; }
     }
 }

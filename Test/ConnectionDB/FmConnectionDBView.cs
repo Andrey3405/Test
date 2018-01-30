@@ -19,16 +19,16 @@ namespace Test.ConnectionDB
         #endregion
 
         #region Свойства
-        public Interface.ITextBox ServerTextBox { get; private set; }
-        public Interface.ITextBox DatabaseTextBox { get; private set; }
+        public Interface.ITextBox TxtServer { get; private set; }
+        public Interface.ITextBox TxtDatabase { get; private set; }
         #endregion
 
         #region Конструктор
         public FmConnectionDBView()
         {
             InitializeComponent();
-            ServerTextBox = new Class.MyTextBox(txtServer);
-            DatabaseTextBox = new Class.MyTextBox(txtDataBase);
+            TxtServer = new Class.MyTextBox(txtServer,false,true);
+            TxtDatabase = new Class.MyTextBox(txtDataBase,false,true);
         }
         #endregion
 

@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Test.ConnectionDB.Presenter;
+using Test.EmployeeCard;
+using Test.EmployeeCard.Presenter;
+using Test.EmployeeCard.View;
 
 namespace Test.Department.Presenter
 {
@@ -41,8 +44,8 @@ namespace Test.Department.Presenter
             //Привязка событий
             view.LoadForm += OnLoadForm;
             view.ChangingNode += OnChangingNode;
-
-            view.DGVEmployees.DataSourceChanging += OnDataSourceChangeing;
+            view.DGVEmployees.DataSourceChanged += OnDataSourceChangeing;
+            view.DGVEmployees.DataGridViewCellMouseDoubleClick += OnDataGridViewCellMouseDoubleClick;
         }
 
         public Form ShowForm()
@@ -54,23 +57,46 @@ namespace Test.Department.Presenter
         {
             dtEmployees = connection.GetDepartments();
             TreeNode tree = model.CreateTree(dtEmployees);
-            view.AddNode(tree);
+            view.TVDepartment.AddNode(tree);
         }
 
         public void OnChangingNode(object sender, TreeViewEventArgs e)
         {
             view.DGVEmployees.DataSource =
-                connection.GetEmployeeByDepartmentID(view.SelectedNodeID);            
+                connection.GetEmployeesByDepartmentID(view.TVDepartment.SelectedNodeID);            
         }
 
         public void OnDataSourceChangeing(object sender, EventArgs e)
         {
-            view.DGVEmployees.SetColumnVisible("ID", false);
+            view.DGVEmployees.SetColumnVisible   ("ID", false);
             view.DGVEmployees.SetColumnHeaderText("Employee", "Сотрудник");
             view.DGVEmployees.SetColumnHeaderText("DateOfBirth", "Дата рождения");
             view.DGVEmployees.SetColumnHeaderText("Age", "Возраст");
             view.DGVEmployees.SetColumnHeaderText("Document", "Документ");
             view.DGVEmployees.SetColumnHeaderText("Position", "Должность");
+        }
+
+        public void OnDataGridViewCellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int indexRow = view.DGVEmployees.SelectedRowIndex;
+            int EmployeeID = view.DGVEmployees.GetEmployeeID(indexRow);
+            Class.EmployeeInfo employeeInfo = connection.GetEmployeeByID(EmployeeID);
+
+            //Если этого сотрудника нет в базе
+            if (employeeInfo == null)
+            {
+                view.DGVEmployees.RemoveAt(indexRow);
+                return;
+            }
+
+            //Обновить редактируему запись
+            model.UpdateEmployeeInfo(view.DGVEmployees.SelectedRow, employeeInfo);
+
+            IEmployeeCardView employeeCardView 
+                = new FmEmployeeCard();
+            EmployeeCardPresenter employeeCardPresenter
+                = new EmployeeCardPresenter(employeeCardView,employeeInfo);
+            
         }
     }
 }

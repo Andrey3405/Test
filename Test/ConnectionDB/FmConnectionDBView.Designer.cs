@@ -32,11 +32,11 @@
             this.txtServer = new System.Windows.Forms.TextBox();
             this.lbDataBase = new System.Windows.Forms.Label();
             this.txtDataBase = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlButtons = new System.Windows.Forms.Panel();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnTestConnection = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbServer
@@ -74,16 +74,17 @@
             this.txtDataBase.TabIndex = 3;
             this.txtDataBase.Text = "TestDB";
             // 
-            // panel1
+            // pnlButtons
             // 
-            this.panel1.Controls.Add(this.btnOK);
-            this.panel1.Controls.Add(this.btnTestConnection);
-            this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 61);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(307, 34);
-            this.panel1.TabIndex = 4;
+            this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlButtons.Controls.Add(this.btnOK);
+            this.pnlButtons.Controls.Add(this.btnTestConnection);
+            this.pnlButtons.Controls.Add(this.btnCancel);
+            this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlButtons.Location = new System.Drawing.Point(0, 61);
+            this.pnlButtons.Name = "pnlButtons";
+            this.pnlButtons.Size = new System.Drawing.Size(307, 34);
+            this.pnlButtons.TabIndex = 4;
             // 
             // btnOK
             // 
@@ -122,7 +123,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(307, 95);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.txtDataBase);
             this.Controls.Add(this.lbDataBase);
             this.Controls.Add(this.txtServer);
@@ -133,7 +134,7 @@
             this.Name = "FmConnectionDBView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Настройка соединения ";
-            this.panel1.ResumeLayout(false);
+            this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,7 +146,7 @@
         private System.Windows.Forms.TextBox txtServer;
         private System.Windows.Forms.Label lbDataBase;
         private System.Windows.Forms.TextBox txtDataBase;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlButtons;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnTestConnection;

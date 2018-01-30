@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Test.Interface
+namespace Test.EmployeeCard.Model
 {
-    public interface ITextBox
+    class EmployeeCardModel
     {
-        string Text { get; set; }
-        bool Compulsory { get; }
     }
 }

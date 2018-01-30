@@ -47,9 +47,15 @@
   <ItemGroup>
     <Compile Include="Class\Connection.cs" />
     <Compile Include="Class\Date.cs" />
+    <Compile Include="Data\EmployeeInfo.cs" />
+    <Compile Include="Tools\MyDataTimePicker.cs" />
+    <Compile Include="Tools\MyLabel.cs" />
+    <Compile Include="Interface\IDataTimePicker.cs" />
+    <Compile Include="Interface\IFormMethods.cs" />
     <Compile Include="Class\Messages.cs" />
-    <Compile Include="Class\MyDataGridView.cs" />
-    <Compile Include="Class\MyTextBox.cs" />
+    <Compile Include="Tools\MyDataGridView.cs" />
+    <Compile Include="Tools\MyTextBox.cs" />
+    <Compile Include="Tools\MyTreeView.cs" />
     <Compile Include="ConnectionDB\FmConnectionDBView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,7 +74,17 @@
     <Compile Include="Department\Model\DepartmentModel.cs" />
     <Compile Include="Department\Presenter\DepartmentPresenter.cs" />
     <Compile Include="Department\View\IDepartmentView.cs" />
+    <Compile Include="EmployeeCard\FmEmployeeCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeCard\FmEmployeeCard.Designer.cs">
+      <DependentUpon>FmEmployeeCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeCard\Model\EmployeeCardModel.cs" />
+    <Compile Include="EmployeeCard\Presenter\EmployeeCardPresenter.cs" />
+    <Compile Include="EmployeeCard\View\IEmployeeCardView.cs" />
     <Compile Include="Interface\IDataGridView.cs" />
+    <Compile Include="Interface\ILabel.cs" />
     <Compile Include="Interface\ITextBox.cs" />
     <Compile Include="Interface\ITreeView.cs" />
     <Compile Include="Program.cs" />
@@ -78,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Department\FmDepartmentView.resx">
       <DependentUpon>FmDepartmentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeCard\FmEmployeeCard.resx">
+      <DependentUpon>FmEmployeeCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

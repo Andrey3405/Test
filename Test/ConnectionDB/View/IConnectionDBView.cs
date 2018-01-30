@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Test.ConnectionDB.View
 {
-    interface IConnectionDBView
+    interface IConnectionDBView: Class.IFormMethods
     {
         //События
         event EventHandler<EventArgs> TestConnectionClick;
@@ -15,11 +15,7 @@ namespace Test.ConnectionDB.View
         event EventHandler<EventArgs> OKClick;
 
         //Свойства
-        Interface.ITextBox ServerTextBox { get; }
-        Interface.ITextBox DatabaseTextBox { get; }
-
-        //Методы
-        DialogResult ShowDialog();
-        DialogResult DialogResult { get; set; }
+        Interface.ITextBox TxtServer { get; }
+        Interface.ITextBox TxtDatabase { get; }
     }
 }

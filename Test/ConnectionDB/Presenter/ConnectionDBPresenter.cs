@@ -37,16 +37,16 @@ namespace Test.ConnectionDB.Presenter
         private void OnTestConnectionClick(object sender, EventArgs e)
         {
             //Проверка данных на пустоту
-            if (model.StringIsEmpty(view.ServerTextBox.Text,
-                view.DatabaseTextBox.Text))
+            if (model.StringIsEmpty(view.TxtServer.Text,
+                view.TxtDatabase.Text))
             {
                 Class.Messages.DataIsEmpty();
                 return;
             }
 
             string connectionString
-                = model.GetConnectionString(view.ServerTextBox.Text,
-                                            view.DatabaseTextBox.Text,
+                = model.GetConnectionString(view.TxtServer.Text,
+                                            view.TxtDatabase.Text,
                                             5);
             
             //Если не указана строка подключение или устарела
@@ -65,16 +65,16 @@ namespace Test.ConnectionDB.Presenter
         private void OnOKClick(object sender, EventArgs e)
         {
             //Проверка данных на пустоту
-            if(model.StringIsEmpty(view.ServerTextBox.Text,
-                view.DatabaseTextBox.Text))
+            if(model.StringIsEmpty(view.TxtServer.Text,
+                view.TxtDatabase.Text))
             {
                 Class.Messages.DataIsEmpty();
                 return;
             }
 
             string connectionString
-                = model.GetConnectionString(view.ServerTextBox.Text,
-                                            view.DatabaseTextBox.Text,
+                = model.GetConnectionString(view.TxtServer.Text,
+                                            view.TxtDatabase.Text,
                                             10);
 
             //Если не указана строка подключение или устарела

@@ -12,14 +12,8 @@ namespace Test.Department.View
         event EventHandler<EventArgs> LoadForm;
         event EventHandler<TreeViewEventArgs> ChangingNode;
 
-        TreeNode SelectedNode { get; set; }
-        Guid SelectedNodeID { get; }
         Interface.IDataGridView DGVEmployees { get; }
-
-        void AddNode(TreeNode _treeNode);
-        void AddNode(string name);
-        void RemoveNode(TreeNode _treeNode);
-        void RemoveNode(int index);
+        Interface.ITreeView TVDepartment { get; }
 
         void Close();
     }

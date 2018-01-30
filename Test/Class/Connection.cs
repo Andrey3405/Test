@@ -60,7 +60,7 @@ namespace Test.Class
         /// <summary>
         /// Получить запрос возвращающий выборку сотрудников по конкретному отделу
         /// </summary>
-        private SqlCommand SqlEmployeeByDepartmentID()
+        private SqlCommand SqlEmployeesByDepartmentID()
         {
             string sqlString = String.Format("Select Cast(ID as int) as ID {0}" +
                 ",FirstName {0}" +
@@ -75,15 +75,70 @@ namespace Test.Class
             return new SqlCommand(sqlString, sqlConnection);
         }
 
+        /// <summary>
+        /// Получить запрос возвращающий информацию о конкретном сотруднике
+        /// </summary>
+        private SqlCommand SqlEmployeeByID()
+        {
+            string sqlString = String.Format("Select FirstName {0}" +
+                   ",SurName {0}" +
+                   ",Patronymic {0}" +
+                   ",DateOfBirth {0}" +
+                   ",DocSeries {0}" +
+                   ",DocNumber {0}" +
+                   ",Position {0}" +
+                   ",Department.Name as Department {0}" +
+                   "FROM Empoyee join Department on Department.ID = DepartmentID {0}" +
+                   "where Empoyee.ID = @EmployeeID", Environment.NewLine);
+            return new SqlCommand(sqlString, sqlConnection);
+        }
         #endregion
 
         #region Получить данные
-        public DataTable GetEmployeeByDepartmentID(Guid departmentID)
+        /// <summary>
+        /// Получить информацию о сотруднике
+        /// </summary>
+        /// <param name="ID">Идентификатор сотрудника</param>
+        public Class.EmployeeInfo GetEmployeeByID(int ID)
+        {
+            Class.EmployeeInfo employee = new EmployeeInfo();
+            if(Open())
+            {
+                SqlCommand sqlCommand = SqlEmployeeByID();
+                sqlCommand.Parameters.Add("@EmployeeID", SqlDbType.Int).Value = ID;
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                if(sqlDataReader.HasRows)
+                {
+                    sqlDataReader.Read();
+                    employee.ID = ID;
+                    employee.FirstName   = sqlDataReader.GetString(0);
+                    employee.SurName = sqlDataReader.GetString(1);
+                    employee.Patronymic
+                        = (sqlDataReader.GetValue(2) == DBNull.Value) ? String.Empty: sqlDataReader.GetString(2);
+                    employee.DateOfBirth = sqlDataReader.GetDateTime(3);
+                    employee.DocSeries 
+                        = (sqlDataReader.GetValue(4) == DBNull.Value)?String.Empty: sqlDataReader.GetString(4);
+                    employee.DocNumber  
+                        = (sqlDataReader.GetValue(5) == DBNull.Value)?String.Empty: sqlDataReader.GetString(5);
+                    employee.Position    = sqlDataReader.GetString(6);
+                    employee.Department  = sqlDataReader.GetString(7);
+                }
+                Close();
+            }
+            return employee;
+        }
+
+        /// <summary>
+        /// Получить информацию о сотрудниках находящихся в отделе
+        /// </summary>
+        /// <param name="departmentID">Идентификатор отдела</param>
+        public DataTable GetEmployeesByDepartmentID(Guid departmentID)
         {
             DataTable returnValue = new DataTable();
             if(Open())
             {
-                SqlCommand sqlCommand = SqlEmployeeByDepartmentID();
+                SqlCommand sqlCommand = SqlEmployeesByDepartmentID();
                 sqlCommand.Parameters.Add("@DepartmentID", SqlDbType.UniqueIdentifier).Value = departmentID;
 
                 returnValue.Columns.Add("ID", typeof(int));

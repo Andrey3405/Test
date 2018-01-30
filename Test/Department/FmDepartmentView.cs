@@ -15,6 +15,7 @@ namespace Test.Department
     public partial class FmDepartmentView : Form, View.IDepartmentView
     {
         public Interface.IDataGridView DGVEmployees { get; }
+        public Interface.ITreeView TVDepartment { get; }
 
         #region События
         public event EventHandler<EventArgs> LoadForm;
@@ -22,27 +23,7 @@ namespace Test.Department
         #endregion
 
         #region Свойства
-        /// <summary>
-        /// Получает или возвращает выбранный узел
-        /// </summary>
-        public TreeNode SelectedNode { get => tvDepartment.SelectedNode;
-                                       set => tvDepartment.SelectedNode = value; }
-
-        /// <summary>
-        /// Получить GUID выбранного узла
-        /// </summary>
-        public Guid SelectedNodeID
-        {
-            get
-            {
-                if (tvDepartment.SelectedNode
-                    != null)
-                {
-                    return Guid.Parse(tvDepartment.SelectedNode.Tag.ToString());
-                }
-                return Guid.Empty;
-            }
-        }
+        
 
         #endregion
 
@@ -51,6 +32,7 @@ namespace Test.Department
         {
             InitializeComponent();
             DGVEmployees = new Class.MyDataGridView(dgvEmployee);
+            TVDepartment = new Class.MyTreeView(tvDepartment);
         }
         #endregion
 
@@ -64,38 +46,6 @@ namespace Test.Department
         private void FmDepartmentView_Load(object sender, EventArgs e)
         {
             LoadForm?.Invoke(sender, e);
-        }
-
-        /// <summary>
-        /// Добавить узел
-        /// </summary>
-        /// <param name="_treeNode">узел</param>
-        public void AddNode(TreeNode _treeNode)
-        {
-            tvDepartment.Nodes.Add(_treeNode);
-        }
-
-        public void AddNode(string name)
-        {
-            tvDepartment.Nodes.Add(name);
-        }
-
-        /// <summary>
-        /// Удалить узел
-        /// </summary>
-        /// <param name="_treeNode">Узел</param>
-        public void RemoveNode(TreeNode _treeNode)
-        {
-            tvDepartment.Nodes.Remove(_treeNode);
-        }
-
-        /// <summary>
-        /// Удалить узел
-        /// </summary>
-        /// <param name="index">Индекс узла</param>
-        public void RemoveNode(int index)
-        {
-            tvDepartment.Nodes.RemoveAt(index);
         }
         #endregion
 

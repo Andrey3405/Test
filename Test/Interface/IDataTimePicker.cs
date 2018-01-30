@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Test.Interface
 {
-    public interface ITextBox
+    public interface IDataTimePicker
     {
-        string Text { get; set; }
-        bool Compulsory { get; }
+        DateTime Value { get; set; }
     }
 }

@@ -51,5 +51,20 @@ namespace Test.Department.Model
             }
             return returnValue;
         }
+
+        /// <summary>
+        /// Обновить данные
+        /// </summary>
+        /// <param name="row">Строка которую необходимо обновить</param>
+        /// <param name="employee">Информация о сотруднике</param>
+        public void UpdateEmployeeInfo(DataGridViewRow row, Class.EmployeeInfo employee)
+        {
+            if (row == null || employee == null) return;
+            row.Cells["Employee"].Value = $"{employee.SurName} {employee.FirstName} {employee.Patronymic}";
+            row.Cells["DateOfBirth"].Value = employee.DateOfBirth;
+            row.Cells["Age"].Value = Class.Date.GetYear(employee.DateOfBirth);
+            row.Cells["Document"].Value = $"{employee.DocSeries} {employee.DocNumber}";
+            row.Cells["Position"].Value = employee.Position;
+        }
     }
 }
