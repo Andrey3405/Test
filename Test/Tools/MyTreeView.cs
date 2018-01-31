@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Test.Class
+namespace Test.Tools
 {
     class MyTreeView:Interface.ITreeView
     {
@@ -57,9 +57,9 @@ namespace Test.Class
         /// Добавить узел
         /// </summary>
         /// <param name="_treeNode">Название узла</param>
-        public void AddNode(string name)
+        public TreeNode AddNode(string key, string name)
         {
-            treeView.Nodes.Add(name);
+            return treeView.Nodes.Add(key,name);
         }
 
         /// <summary>
@@ -78,6 +78,28 @@ namespace Test.Class
         public void RemoveNode(int index)
         {
             treeView.Nodes.RemoveAt(index);
+        }
+
+        /// <summary>
+        /// Удалить все узлы в дереве
+        /// </summary>
+        public void Clear()
+        {
+            treeView.Nodes.Clear();
+        }
+
+        /// <summary>
+        /// Получить первые узел дерева удовлетворящего условиям
+        /// </summary>
+        public TreeNode FindFirstNode(string key)
+        {
+            TreeNode treeNode = null;
+            TreeNode[] nodes = treeView.Nodes.Find(key, true);
+            if(nodes.Length>0)
+            {
+                treeNode = nodes[0];
+            }
+            return treeNode;
         }
         #endregion
     }

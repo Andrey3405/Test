@@ -21,7 +21,6 @@ namespace Test.ConnectionDB.Presenter
 
             //Подключение событий
             view.TestConnectionClick += OnTestConnectionClick;
-            view.CancelClick += OnCancelClick;
             view.OKClick += OnOKClick;
 
             //Если не создан экземпляр
@@ -29,6 +28,7 @@ namespace Test.ConnectionDB.Presenter
                 ?? new Class.Connection());
         }
 
+        #region Методы
         public DialogResult ShowDialog()
         {
             return view.ShowDialog();
@@ -93,10 +93,6 @@ namespace Test.ConnectionDB.Presenter
                 view.DialogResult = DialogResult.None;
             }
         }
-
-        private void OnCancelClick(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
     }
 }

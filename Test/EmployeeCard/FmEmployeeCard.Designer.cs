@@ -31,20 +31,20 @@
             this.lbSurname = new System.Windows.Forms.Label();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.grpFullname = new System.Windows.Forms.GroupBox();
-            this.lbName = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.lbPatronymic = new System.Windows.Forms.Label();
             this.txtPatronymic = new System.Windows.Forms.TextBox();
+            this.lbName = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.grpDocument = new System.Windows.Forms.GroupBox();
+            this.txtSeries = new System.Windows.Forms.TextBox();
+            this.txtNumber = new System.Windows.Forms.TextBox();
             this.lbNumber = new System.Windows.Forms.Label();
             this.lbSeries = new System.Windows.Forms.Label();
-            this.txtNumber = new System.Windows.Forms.TextBox();
-            this.txtSeries = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbEmployeeYear = new System.Windows.Forms.Label();
+            this.lbYear = new System.Windows.Forms.Label();
             this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbYear = new System.Windows.Forms.Label();
-            this.lbEmployeeYear = new System.Windows.Forms.Label();
             this.grpPosition = new System.Windows.Forms.GroupBox();
             this.txtPosition = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -88,22 +88,6 @@
             this.grpFullname.TabStop = false;
             this.grpFullname.Text = "Полное имя";
             // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(6, 51);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(29, 13);
-            this.lbName.TabIndex = 2;
-            this.lbName.Text = "Имя";
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(68, 48);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(182, 20);
-            this.txtName.TabIndex = 3;
-            // 
             // lbPatronymic
             // 
             this.lbPatronymic.AutoSize = true;
@@ -120,6 +104,22 @@
             this.txtPatronymic.Size = new System.Drawing.Size(182, 20);
             this.txtPatronymic.TabIndex = 5;
             // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Location = new System.Drawing.Point(6, 51);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(29, 13);
+            this.lbName.TabIndex = 2;
+            this.lbName.Text = "Имя";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(68, 48);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(182, 20);
+            this.txtName.TabIndex = 3;
+            // 
             // grpDocument
             // 
             this.grpDocument.Controls.Add(this.txtSeries);
@@ -133,14 +133,28 @@
             this.grpDocument.TabStop = false;
             this.grpDocument.Text = "Документ";
             // 
+            // txtSeries
+            // 
+            this.txtSeries.Location = new System.Drawing.Point(69, 22);
+            this.txtSeries.Name = "txtSeries";
+            this.txtSeries.Size = new System.Drawing.Size(134, 20);
+            this.txtSeries.TabIndex = 6;
+            // 
+            // txtNumber
+            // 
+            this.txtNumber.Location = new System.Drawing.Point(69, 48);
+            this.txtNumber.Name = "txtNumber";
+            this.txtNumber.Size = new System.Drawing.Size(134, 20);
+            this.txtNumber.TabIndex = 5;
+            // 
             // lbNumber
             // 
             this.lbNumber.AutoSize = true;
             this.lbNumber.Location = new System.Drawing.Point(6, 51);
             this.lbNumber.Name = "lbNumber";
-            this.lbNumber.Size = new System.Drawing.Size(54, 13);
+            this.lbNumber.Size = new System.Drawing.Size(41, 13);
             this.lbNumber.TabIndex = 4;
-            this.lbNumber.Text = "Отчество";
+            this.lbNumber.Text = "Номер";
             // 
             // lbSeries
             // 
@@ -150,20 +164,6 @@
             this.lbSeries.Size = new System.Drawing.Size(38, 13);
             this.lbSeries.TabIndex = 2;
             this.lbSeries.Text = "Серия";
-            // 
-            // txtNumber
-            // 
-            this.txtNumber.Location = new System.Drawing.Point(69, 48);
-            this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(134, 20);
-            this.txtNumber.TabIndex = 5;
-            // 
-            // txtSeries
-            // 
-            this.txtSeries.Location = new System.Drawing.Point(69, 22);
-            this.txtSeries.Name = "txtSeries";
-            this.txtSeries.Size = new System.Drawing.Size(134, 20);
-            this.txtSeries.TabIndex = 6;
             // 
             // groupBox1
             // 
@@ -176,6 +176,24 @@
             this.groupBox1.Size = new System.Drawing.Size(471, 39);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
+            // 
+            // lbEmployeeYear
+            // 
+            this.lbEmployeeYear.AutoSize = true;
+            this.lbEmployeeYear.Location = new System.Drawing.Point(328, 16);
+            this.lbEmployeeYear.Name = "lbEmployeeYear";
+            this.lbEmployeeYear.Size = new System.Drawing.Size(13, 13);
+            this.lbEmployeeYear.TabIndex = 5;
+            this.lbEmployeeYear.Text = "0";
+            // 
+            // lbYear
+            // 
+            this.lbYear.AutoSize = true;
+            this.lbYear.Location = new System.Drawing.Point(268, 16);
+            this.lbYear.Name = "lbYear";
+            this.lbYear.Size = new System.Drawing.Size(49, 13);
+            this.lbYear.TabIndex = 4;
+            this.lbYear.Text = "Возраст";
             // 
             // dtpDateOfBirth
             // 
@@ -192,24 +210,6 @@
             this.label2.Size = new System.Drawing.Size(86, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Дата рождения";
-            // 
-            // lbYear
-            // 
-            this.lbYear.AutoSize = true;
-            this.lbYear.Location = new System.Drawing.Point(268, 16);
-            this.lbYear.Name = "lbYear";
-            this.lbYear.Size = new System.Drawing.Size(49, 13);
-            this.lbYear.TabIndex = 4;
-            this.lbYear.Text = "Возраст";
-            // 
-            // lbEmployeeYear
-            // 
-            this.lbEmployeeYear.AutoSize = true;
-            this.lbEmployeeYear.Location = new System.Drawing.Point(328, 16);
-            this.lbEmployeeYear.Name = "lbEmployeeYear";
-            this.lbEmployeeYear.Size = new System.Drawing.Size(13, 13);
-            this.lbEmployeeYear.TabIndex = 5;
-            this.lbEmployeeYear.Text = "0";
             // 
             // grpPosition
             // 

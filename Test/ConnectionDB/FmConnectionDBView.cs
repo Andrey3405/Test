@@ -27,8 +27,8 @@ namespace Test.ConnectionDB
         public FmConnectionDBView()
         {
             InitializeComponent();
-            TxtServer = new Class.MyTextBox(txtServer,false,true);
-            TxtDatabase = new Class.MyTextBox(txtDataBase,false,true);
+            TxtServer = new Tools.MyTextBox(txtServer,false,true);
+            TxtDatabase = new Tools.MyTextBox(txtDataBase,false,true);
         }
         #endregion
 

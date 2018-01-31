@@ -13,8 +13,10 @@ namespace Test.Interface
         Guid SelectedNodeID { get; }
 
         void AddNode(TreeNode _treeNode);
-        void AddNode(string name);
+        TreeNode AddNode(string key, string name);
         void RemoveNode(TreeNode _treeNode);
         void RemoveNode(int index);
+        void Clear();
+        TreeNode FindFirstNode(string key);
     }
 }

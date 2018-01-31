@@ -28,20 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmDepartmentView));
             this.tscMain = new System.Windows.Forms.ToolStripContainer();
             this.pnlEmployee = new System.Windows.Forms.Panel();
             this.dgvEmployee = new System.Windows.Forms.DataGridView();
             this.tsrEmployee = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnEmployeeEdit = new System.Windows.Forms.ToolStripButton();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.pnlDepartment = new System.Windows.Forms.Panel();
             this.tvDepartment = new System.Windows.Forms.TreeView();
             this.tsrDepartment = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnRefresh = new System.Windows.Forms.ToolStripButton();
             this.tscMain.ContentPanel.SuspendLayout();
             this.tscMain.SuspendLayout();
             this.pnlEmployee.SuspendLayout();
@@ -96,31 +92,21 @@
             // 
             this.tsrEmployee.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsrEmployee.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton3,
-            this.toolStripButton4});
+            this.tsbtnEmployeeEdit});
             this.tsrEmployee.Location = new System.Drawing.Point(0, 0);
             this.tsrEmployee.Name = "tsrEmployee";
             this.tsrEmployee.Size = new System.Drawing.Size(507, 25);
             this.tsrEmployee.TabIndex = 0;
             this.tsrEmployee.Text = "toolStrip2";
             // 
-            // toolStripButton3
+            // tsbtnEmployeeEdit
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "toolStripButton3";
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "toolStripButton4";
+            this.tsbtnEmployeeEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnEmployeeEdit.Image = global::Test.Properties.Resources.edit_16;
+            this.tsbtnEmployeeEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnEmployeeEdit.Name = "tsbtnEmployeeEdit";
+            this.tsbtnEmployeeEdit.Size = new System.Drawing.Size(23, 22);
+            this.tsbtnEmployeeEdit.Text = "Редактировать запись";
             // 
             // splitter1
             // 
@@ -153,40 +139,20 @@
             // 
             this.tsrDepartment.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsrDepartment.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton5});
+            this.tsbtnRefresh});
             this.tsrDepartment.Location = new System.Drawing.Point(0, 0);
             this.tsrDepartment.Name = "tsrDepartment";
             this.tsrDepartment.Size = new System.Drawing.Size(223, 25);
             this.tsrDepartment.TabIndex = 0;
             // 
-            // toolStripButton1
+            // tsbtnRefresh
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton5.Text = "toolStripButton5";
+            this.tsbtnRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnRefresh.Image = global::Test.Properties.Resources.reload_icon;
+            this.tsbtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnRefresh.Name = "tsbtnRefresh";
+            this.tsbtnRefresh.Size = new System.Drawing.Size(23, 22);
+            this.tsbtnRefresh.Text = "toolStripButton1";
             // 
             // FmDepartmentView
             // 
@@ -197,6 +163,7 @@
             this.Name = "FmDepartmentView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Структура предпрития";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FmDepartmentView_Load);
             this.tscMain.ContentPanel.ResumeLayout(false);
             this.tscMain.ResumeLayout(false);
@@ -222,13 +189,10 @@
         private System.Windows.Forms.Panel pnlDepartment;
         private System.Windows.Forms.DataGridView dgvEmployee;
         private System.Windows.Forms.ToolStrip tsrEmployee;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton tsbtnEmployeeEdit;
         private System.Windows.Forms.TreeView tvDepartment;
         private System.Windows.Forms.ToolStrip tsrDepartment;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton tsbtnRefresh;
     }
 }
 

@@ -6,13 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Test.Class
+namespace Test.Tools
 {
     class MyTextBox:Interface.ITextBox
     {
         private TextBox textBox;
         private bool compulsory;
 
+        #region Свойства
         /// <summary>
         /// Является ли поле обязательным к заполнению
         /// </summary>
@@ -21,6 +22,13 @@ namespace Test.Class
             get => compulsory;
             private set => compulsory = value;                
         }
+
+        public string Text
+        {
+            get => textBox.Text;
+            set => textBox.Text = value;
+        }
+        #endregion
 
         public MyTextBox(TextBox _textBox,bool _isDigit ,bool _compilsory)
         {
@@ -34,12 +42,7 @@ namespace Test.Class
                 textBox.KeyPress += OnKeyPress;
         }
 
-        public string Text
-        {
-            get => textBox.Text;
-            set => textBox.Text = value;
-        }
-
+        #region Методы
         public void OnTextChanged(object sender, EventArgs e)
         {
             textBox.BackColor = (textBox.TextLength > 0)
@@ -50,11 +53,12 @@ namespace Test.Class
         {
             char ch = e.KeyChar;
 
-            if (!Char.IsDigit(ch) && ch != 8) //Если символ, введенный с клавы - не цифра (IsDigit),
+            if (!Char.IsDigit(ch) && ch != 8) 
             {
-                e.Handled = true;// то событие не обрабатывается. ch!=8 (8 - это Backspace)
+                e.Handled = true;
             }
 
         }
+        #endregion
     }
 }

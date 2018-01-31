@@ -17,6 +17,9 @@ namespace Test.Department
         public Interface.IDataGridView DGVEmployees { get; }
         public Interface.ITreeView TVDepartment { get; }
 
+        public Interface.IButton BtnRefresh { get; }
+        public Interface.IButton BtnEmployeeEdit { get; }
+
         #region События
         public event EventHandler<EventArgs> LoadForm;
         public event EventHandler<TreeViewEventArgs> ChangingNode;
@@ -31,8 +34,10 @@ namespace Test.Department
         public FmDepartmentView()
         {
             InitializeComponent();
-            DGVEmployees = new Class.MyDataGridView(dgvEmployee);
-            TVDepartment = new Class.MyTreeView(tvDepartment);
+            DGVEmployees = new Tools.MyDataGridView(dgvEmployee);
+            TVDepartment = new Tools.MyTreeView(tvDepartment);
+            BtnRefresh = new Tools.MyToolStripButton(tsbtnRefresh);
+            BtnEmployeeEdit = new Tools.MyToolStripButton(tsbtnEmployeeEdit);
         }
         #endregion
 

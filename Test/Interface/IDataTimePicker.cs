@@ -8,6 +8,8 @@ namespace Test.Interface
 {
     public interface IDataTimePicker
     {
+        event EventHandler<EventArgs> ValueChanged;
+
         DateTime Value { get; set; }
     }
 }

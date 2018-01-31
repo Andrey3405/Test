@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Test.ConnectionDB.View
 {
-    interface IConnectionDBView: Class.IFormMethods
+    interface IConnectionDBView: Interface.IFormMethods
     {
         //События
         event EventHandler<EventArgs> TestConnectionClick;

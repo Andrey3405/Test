@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Test.Interface
 {
-    interface IFormMethods
+    public interface IButton
     {
-        //Методы
-        DialogResult ShowDialog();
-        DialogResult DialogResult { get; set; }
+        event EventHandler<EventArgs> Click;
+
+        bool Visible { get; set; }
+        bool Enabled { get; set; }
     }
 }

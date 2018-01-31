@@ -6,12 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Test.Class
+namespace Test.Tools
 {
     class MyDataGridView : Interface.IDataGridView
     {
         private DataGridView dataGridView;
-        
+
+        public event EventHandler<EventArgs> SelectionChanged;
         public event EventHandler<EventArgs> DataSourceChanged;
         public event EventHandler<DataGridViewCellMouseEventArgs> DataGridViewCellMouseDoubleClick;
 
@@ -69,6 +70,7 @@ namespace Test.Class
             dataGridView = _dataGridView;
             dataGridView.DataSourceChanged += OnDataSourceChanged;
             dataGridView.CellMouseDoubleClick += OnDataGridViewCellMouseDoubleClick;
+            dataGridView.SelectionChanged += OnSelectionChanged;
         }
 
         #region Методы
@@ -94,6 +96,11 @@ namespace Test.Class
             DataGridViewCellMouseDoubleClick?.Invoke(sender,e);
         }
 
+        public void OnSelectionChanged(object sender,EventArgs e)
+        {
+            SelectionChanged?.Invoke(sender, e);
+        }
+
         /// <summary>
         /// Получить идентификатор сотрудника
         /// </summary>
@@ -117,6 +124,7 @@ namespace Test.Class
             if (dataGridView.Rows.Count <= index) return;
             else
             {
+                if (this.SelectedRowIndex == index) dataGridView.ClearSelection();
                 dataGridView.Rows.RemoveAt(index);
             }
         }

@@ -12,6 +12,7 @@ namespace Test.Interface
     {
         event EventHandler<EventArgs> DataSourceChanged;
         event EventHandler<DataGridViewCellMouseEventArgs> DataGridViewCellMouseDoubleClick;
+        event EventHandler<EventArgs> SelectionChanged;
 
         int SelectedRowIndex { get; set; }
         DataGridViewRow SelectedRow{ get; }

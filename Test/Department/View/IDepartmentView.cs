@@ -14,6 +14,8 @@ namespace Test.Department.View
 
         Interface.IDataGridView DGVEmployees { get; }
         Interface.ITreeView TVDepartment { get; }
+        Interface.IButton BtnEmployeeEdit { get; }
+        Interface.IButton BtnRefresh { get; }
 
         void Close();
     }

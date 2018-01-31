@@ -48,6 +48,8 @@
     <Compile Include="Class\Connection.cs" />
     <Compile Include="Class\Date.cs" />
     <Compile Include="Data\EmployeeInfo.cs" />
+    <Compile Include="Interface\IButton.cs" />
+    <Compile Include="Tools\MyButton.cs" />
     <Compile Include="Tools\MyDataTimePicker.cs" />
     <Compile Include="Tools\MyLabel.cs" />
     <Compile Include="Interface\IDataTimePicker.cs" />
@@ -55,6 +57,7 @@
     <Compile Include="Class\Messages.cs" />
     <Compile Include="Tools\MyDataGridView.cs" />
     <Compile Include="Tools\MyTextBox.cs" />
+    <Compile Include="Tools\MyToolStripButton.cs" />
     <Compile Include="Tools\MyTreeView.cs" />
     <Compile Include="ConnectionDB\FmConnectionDBView.cs">
       <SubType>Form</SubType>
@@ -80,7 +83,6 @@
     <Compile Include="EmployeeCard\FmEmployeeCard.Designer.cs">
       <DependentUpon>FmEmployeeCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeCard\Model\EmployeeCardModel.cs" />
     <Compile Include="EmployeeCard\Presenter\EmployeeCardPresenter.cs" />
     <Compile Include="EmployeeCard\View\IEmployeeCardView.cs" />
     <Compile Include="Interface\IDataGridView.cs" />
@@ -106,6 +108,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -120,6 +123,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EmployeeCard\Model\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Test.Class
+namespace Test.Tools
 {
     class MyLabel:Interface.ILabel
     {

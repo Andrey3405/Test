@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Test.Class
+namespace Test.Tools
 {
     class MyDataTimePicker:Interface.IDataTimePicker
     {
+        public event EventHandler<EventArgs> ValueChanged;
         DateTimePicker dateTimePicker;
 
         /// <summary>
@@ -34,8 +35,12 @@ namespace Test.Class
         public MyDataTimePicker(DateTimePicker _dateTimePicker)
         {
             dateTimePicker = _dateTimePicker;
+            dateTimePicker.ValueChanged += OnValueChanged;
         }
 
-
+        public void OnValueChanged(object sender, EventArgs e)
+        {
+            ValueChanged?.Invoke(sender, e);
+        }
     }
 }
